@@ -1,26 +1,37 @@
 /* =========================================
-   1. RESET & NỀN TẢNG
-   ========================================= */
+    1. RESET & NỀN TẢNG
+    ========================================= */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body { 
     font-family: 'Montserrat', sans-serif; 
     color: #333; 
     background-color: #fff;
-    /* Ép độ rộng tối thiểu để không bao giờ vỡ hàng ngang */
-    min-width: 1024px; 
-    overflow-x: hidden;
+    width: 100%; 
+    overflow-x: hidden; 
+}
+
+/* --- THÊM MỚI: CẤU HÌNH CHO THẺ LIÊN KẾT (A) --- */
+a {
+    text-decoration: none; /* Bỏ gạch chân */
+    color: inherit;        /* Lấy màu sắc từ văn bản cha (đen hoặc đỏ) */
+    transition: 0.2s;      /* Hiệu ứng mượt khi chạm/di chuột */
+}
+
+a:hover {
+    opacity: 0.7;          /* Hiệu ứng mờ nhẹ khi di chuột vào */
+    text-decoration: underline; /* Hiện lại gạch chân khi hover để biết là link */
 }
 
 /* =========================================
-   2. HERO POSTER (PHẦN ĐẦU TRANG)
-   ========================================= */
+    2. HERO POSTER
+    ========================================= */
 .hero-poster { width: 100%; line-height: 0; }
 .full-poster { width: 100%; height: auto; display: block; }
 
 /* =========================================
-   3. CONTACT SECTION (PHẦN LIÊN HỆ)
-   ========================================= */
+    3. CONTACT SECTION
+    ========================================= */
 .contact-section { 
     padding: 60px 0; 
     background: #fff; 
@@ -29,55 +40,100 @@ body {
 
 .section-title { 
     text-align: center; 
-    font-size: 2.2rem; 
-    font-weight: 300; 
+    font-family: 'Atteron';
+    font-size: 2.7rem; 
+    font-weight: 500; 
     margin-bottom: 50px; 
     letter-spacing: 2px;
 }
 
 .contact-grid { 
     display: grid; 
-    grid-template-columns: 1fr 1fr; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
     gap: 30px; 
     max-width: 900px; 
     margin: 0 auto; 
+    padding: 0 20px;
 }
 
-.contact-item { padding: 0 20px; }
-.centered { grid-column: span 2; justify-self: center; text-align: center; margin-top: 20px; }
-.quote { font-size: 5rem; display: block; height: 45px; font-family: serif; font-weight: bold; }
-.contact-item p { font-size: 1.1rem; margin-bottom: 5px; }
-.staff-name { font-weight: bold; margin-top: 5px; }
+.contact-item { 
+    padding: 0 10px; 
+}
 
-/* Thanh đỏ tràn viền đúng 100% màn hình */
+/* Giúp người dùng dễ dàng chạm và sao chép trên điện thoại */
+.contact-item p { 
+    font-size: 1.2rem; 
+    margin-bottom: 5px; 
+    user-select: all; 
+    -webkit-user-select: all; 
+}
+
+.centered { 
+    grid-column: 1 / -1; 
+    margin-top: 20px; 
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+.staff-box-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    width: fit-content;      
+}
+
+.quote { 
+    font-size: 5rem; 
+    display: block; 
+    height: 45px; 
+    font-family: serif; 
+    font-weight: bold; 
+    color: #ee0000;
+}
+
+.details-centered {
+    text-align: left; 
+}
+
+.staff-name { font-weight: bold; margin-top: 5px; color: #ee0000; }
+
 .decoration-red-bar { 
     width: 100%; 
     height: 45px; 
     background: #ff4d4d; 
-    margin-top: 60px;
+    margin: 60px 0;
 }
 
 /* =========================================
-   4. PRICING TABLES (BẢNG GIÁ)
-   ========================================= */
+    4. PRICING TABLES
+    ========================================= */
 .pricing-container { 
-    padding: 60px 0; 
+    padding: 30px 0; 
     background-color: #fff;
 }
 
-/* Khung bọc giữ khoảng cách lề trái/phải cho bảng */
 .pricing-wrapper {
-    width: 1000px; /* Độ rộng cố định để bảng không mất góc */
+    width: 100%;
+    max-width: 1000px; 
     margin: 0 auto;
-    padding: 0 40px; 
+    padding: 0 10px; 
 }
 
 .pricing-row { 
     display: flex; 
     justify-content: center; 
     align-items: flex-start; 
-    gap: 50px; 
-    margin-bottom: 10px;
+    gap: 30px; 
+    margin-bottom: 40px;
+    flex-wrap: wrap; 
+}
+
+.country-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .country-title { 
@@ -86,41 +142,62 @@ body {
     font-size: 1.6rem; 
     font-weight: 300; 
     letter-spacing: 6px; 
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     text-transform: uppercase;
 }
 
-.table-pair { display: flex; gap: 15px; }
+.table-pair { 
+    display: flex; 
+    gap: 10px; 
+    justify-content: center;
+    flex-wrap: nowrap; 
+}
 
 .data-table { 
     border-collapse: collapse; 
-    width: 190px; 
+    width: 180px; 
     font-size: 10px;
 }
 
-.data-table th, .data-table td { 
-    border: 0.5px solid #ccc; 
+.data-table td { 
+    border: 1px solid #ccc; 
     padding: 7px 4px; 
     text-align: center; 
+    font-weight: 600;       
+    color: #000;           
 }
 
 .data-table thead th { 
     background: #dbdbdb; 
     color: #ee0000; 
-    font-weight: 700;
+    font-weight: 800;      
 }
 
 .highlight-red td:first-child { 
     color: #ee0000 !important; 
-    font-weight: 600; 
+    font-weight: 800;      
 }
 
-/* Divider vạch vàng ở giữa chuẩn Canva */
+/* Media Query cho điện thoại nhỏ */
+@media screen and (max-width: 400px) {
+    .data-table { width: 45vw; font-size: 9.5px; } 
+    .data-table td { font-weight: 700; } 
+    .table-pair { gap: 5px; }
+    .country-title { font-size: 1.3rem; letter-spacing: 3px; }
+    .section-title { font-size: 1.8rem; }
+}
+
+/* Divider vạch vàng */
 .divider { 
     display: flex; 
     flex-direction: column; 
     align-items: center; 
-    padding-top: 150px; 
+    padding-top: 100px; 
+}
+
+@media screen and (max-width: 768px) {
+    .divider { display: none; } 
+    .section-title { font-size: 2rem; }
 }
 
 .v-line { 
@@ -128,7 +205,7 @@ body {
     height: 90px; 
     background: #d4af37; 
     opacity: 0.7;
-}
+}  
 
 .star { 
     color: #d4af37; 
