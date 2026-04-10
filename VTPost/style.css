@@ -212,3 +212,67 @@ a:hover {
     font-size: 18px; 
     margin: 12px 0;
 }
+
+
+
+.main-pricing-title {
+    text-align: center; /* Căn giữa */
+    font-family: 'Arial', sans-serif; /* Kiểu chữ giống các bảng giá */
+    font-size: 28px;
+    
+    text-transform: uppercase; /* Viết hoa toàn bộ */
+    margin: 0px 0; /* Khoảng cách trên dưới */
+    letter-spacing: 1px; /* Khoảng cách các chữ cho thoáng */
+    padding: 10px 0; 
+    background: #fff; 
+    color: #ee0000; 
+    font-family: 'Atteron';
+}
+
+
+
+
+
+/* css ảnh 
+
+/* Container chứa các ảnh */
+.footer-images-container, 
+.footer-gallery, 
+.final-images-container {
+    display: block !important; /* Hủy bỏ hàng ngang, ép xuống hàng dọc */
+    width: 100%;
+    max-width: 800px; /* Giới hạn độ rộng để ảnh không bị quá to trên máy tính */
+    margin: 40px auto; /* Căn giữa toàn bộ vùng chứa ảnh */
+    padding: 0 15px;
+}
+
+/* Các khung bao quanh ảnh hoặc chính thẻ img */
+.image-card, 
+.image-wrapper, 
+.gallery-item,
+.gallery-block {
+    width: 100% !important;
+    margin-bottom: 50px; /* Khoảng cách giữa các ảnh khi xếp chồng */
+    display: block !important;
+}
+
+/* Quan trọng: Giữ tỷ lệ ảnh để không mất góc */
+.footer-images-container img,
+.footer-gallery img,
+.final-images-container img {
+    width: 100% !important;
+    height: auto !important; /* Giữ nguyên tỷ lệ gốc, không bị méo hay mất chi tiết */
+    display: block;
+    border-radius: 8px; /* Bo góc nhẹ */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Đổ bóng cho đẹp */
+}
+
+/* Responsive cho điện thoại */
+@media screen and (max-width: 768px) {
+    .footer-images-container, 
+    .footer-gallery, 
+    .final-images-container {
+        padding: 0 10px;
+        margin-top: 20px;
+    }
+}
