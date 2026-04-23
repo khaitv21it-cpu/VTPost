@@ -1,276 +1,531 @@
 /* =========================================
-    1. RESET & NỀN TẢNG
-    ========================================= */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-body { 
-    font-family: 'Montserrat', sans-serif; 
-    color: #333; 
-    background-color: #fff;
-    width: 100%; 
-    overflow-x: hidden; 
+   1. RESET & NỀN TẢNG
+========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* --- THÊM MỚI: CẤU HÌNH CHO THẺ LIÊN KẾT (A) --- */
+body {
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    background-color: #fff;
+    width: 100%;
+    overflow-x: hidden;
+}
+
 a {
-    text-decoration: none; /* Bỏ gạch chân */
-    color: inherit;        /* Lấy màu sắc từ văn bản cha (đen hoặc đỏ) */
-    transition: 0.2s;      /* Hiệu ứng mượt khi chạm/di chuột */
+    text-decoration: none;
+    color: inherit;
+    transition: 0.2s;
 }
 
 a:hover {
-    opacity: 0.7;          /* Hiệu ứng mờ nhẹ khi di chuột vào */
-    text-decoration: underline; /* Hiện lại gạch chân khi hover để biết là link */
+    opacity: 0.7;
+    text-decoration: underline;
 }
 
 /* =========================================
-    2. HERO POSTER
-    ========================================= */
-.hero-poster { width: 100%; line-height: 0; }
-.full-poster { width: 100%; height: auto; display: block; }
-
-/* =========================================
-    3. CONTACT SECTION
-    ========================================= */
-.contact-section { 
-    padding: 60px 0; 
-    background: #fff; 
-    color: #ee0000; 
+   2. HERO POSTER
+========================================= */
+.hero-poster {
+    width: 100%;
+    line-height: 0;
 }
 
-.section-title { 
-    text-align: center; 
-    font-family: 'Atteron';
-    font-size: 2.7rem; 
-    font-weight: 500; 
-    margin-bottom: 50px; 
+.full-poster {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* =========================================
+   3. KHUNG CHUNG
+========================================= */
+.content-shell,
+.main-wrapper,
+.footer-gallery {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* =========================================
+   4. CONTACT SECTION
+========================================= */
+.contact-section {
+    padding: 60px 0;
+    background: #fff;
+    color: #ee0000;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 500;
+    margin-bottom: 40px;
     letter-spacing: 2px;
 }
 
-.contact-grid { 
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-    gap: 30px; 
-    max-width: 900px; 
-    margin: 0 auto; 
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
     padding: 0 20px;
 }
 
-.contact-item { 
-    padding: 0 10px; 
+.contact-item {
+    padding: 0 10px;
 }
 
-/* Giúp người dùng dễ dàng chạm và sao chép trên điện thoại */
-.contact-item p { 
-    font-size: 1.2rem; 
-    margin-bottom: 5px; 
-    user-select: all; 
-    -webkit-user-select: all; 
+.contact-item p {
+    font-size: 1.15rem;
+    margin-bottom: 5px;
+    user-select: all;
+    -webkit-user-select: all;
 }
 
-.centered { 
-    grid-column: 1 / -1; 
-    margin-top: 20px; 
+.centered {
+    grid-column: 1 / -1;
+    margin-top: 20px;
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center; 
+    align-items: center;
 }
 
 .staff-box-inner {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; 
-    width: fit-content;      
+    align-items: flex-start;
+    width: fit-content;
 }
 
 .quote { 
-    font-size: 5rem; 
-    display: block; 
-    height: 45px; 
+    font-size: 4rem; 
+    display: block;
+    height: 45px;
+
     font-family: serif; 
     font-weight: bold; 
     color: #ee0000;
+
+    line-height: 1;        /* 🔥 reset baseline */
+    position: relative;
+    top: 1px;             /* 🔥 nhích lên */
 }
+
 
 .details-centered {
-    text-align: left; 
+    text-align: left;
 }
 
-.staff-name { font-weight: bold; margin-top: 5px; color: #ee0000; }
+.staff-name {
+    font-weight: bold;
+    margin-top: 5px;
+    color: #ee0000;
+}
 
-.decoration-red-bar { 
-    width: 100%; 
-    height: 45px; 
-    background: #ff4d4d; 
-    margin: 60px 0;
+.decoration-red-bar {
+    width: 100%;
+    height: 36px;
+    background: #ff4d4d;
+    margin: 28px 0 36px;
 }
 
 /* =========================================
-    4. PRICING TABLES
-    ========================================= */
-.pricing-container { 
-    padding: 30px 0; 
-    background-color: #fff;
+   5. PRICING
+========================================= */
+.main-wrapper {
+    padding: 0 10px 20px;
 }
 
-.pricing-wrapper {
+.main-pricing-title {
+    text-align: center;
+    font-size: 1.42rem;
+    text-transform: uppercase;
+    margin: 0 0 24px;
+    letter-spacing: 0.8px;
+    padding: 6px 0;
+    color: #ee0000;
+    font-weight: 700;
+    line-height: 1.22;
+}
+
+.loading-text,
+.error-text {
+    text-align: center;
+    padding: 30px 15px;
+    color: #ee0000;
+}
+
+.pricing-scale {
     width: 100%;
-    max-width: 1000px; 
-    margin: 0 auto;
-    padding: 0 10px; 
+    display: block;
 }
 
-.pricing-row { 
-    display: flex; 
-    justify-content: center; 
-    align-items: flex-start; 
-    gap: 30px; 
-    margin-bottom: 40px;
-    flex-wrap: wrap; 
+.pricing-row {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    margin-bottom: 34px;
+    flex-wrap: nowrap;
 }
 
 .country-block {
     display: flex;
     flex-direction: column;
     align-items: center;
+    flex: 0 0 auto;
 }
 
-.country-title { 
-    color: #ff4d4d; 
-    text-align: center; 
-    font-size: 1.6rem; 
-    font-weight: 300; 
-    letter-spacing: 6px; 
-    margin-bottom: 20px;
+.country-title {
+    color: #ff8a8a;
+    text-align: center;
+    font-size: 1.28rem;
+    font-weight: 300;
+    letter-spacing: 4.8px;
+    margin-bottom: 12px;
     text-transform: uppercase;
 }
 
-.table-pair { 
-    display: flex; 
-    gap: 10px; 
+.table-pair {
+    display: flex;
+    gap: 12px;
     justify-content: center;
-    flex-wrap: nowrap; 
+    flex-wrap: nowrap;
 }
 
-.data-table { 
-    border-collapse: collapse; 
-    width: 180px; 
-    font-size: 10px;
+.data-table {
+    border-collapse: collapse;
+    width: 154px;
+    font-size: 8.6px;
+    table-layout: fixed;
+    background: #fff;
 }
 
-.data-table td { 
-    border: 1px solid #ccc; 
-    padding: 7px 4px; 
-    text-align: center; 
-    font-weight: 600;       
-    color: #000;           
+.data-table th,
+.data-table td {
+    border: 1px solid #d7d7d7;
+    padding: 4px 3px;
+    text-align: center;
+    font-weight: 600;
+    color: #000;
+    white-space: nowrap;
+    line-height: 1.12;
 }
 
-.data-table thead th { 
-    background: #dbdbdb; 
-    color: #ee0000; 
-    font-weight: 800;      
+.data-table thead th {
+    background: #f3f3f3;
+    color: #ee0000;
+    font-weight: 800;
+    font-size: 7.7px;
 }
 
-.highlight-red td:first-child { 
-    color: #ee0000 !important; 
-    font-weight: 800;      
-}
-
-/* Media Query cho điện thoại nhỏ */
-@media screen and (max-width: 400px) {
-    .data-table { width: 45vw; font-size: 9.5px; } 
-    .data-table td { font-weight: 700; } 
-    .table-pair { gap: 5px; }
-    .country-title { font-size: 1.3rem; letter-spacing: 3px; }
-    .section-title { font-size: 1.8rem; }
+.highlight-red td:first-child,
+.highlight-red td {
+    color: #ee0000 !important;
+    font-weight: 800;
 }
 
 /* Divider vạch vàng */
-.divider { 
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
-    padding-top: 100px; 
+.divider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 74px;
+    margin: 0 12px;
+    flex: 0 0 12px;
 }
 
-@media screen and (max-width: 768px) {
-    .divider { display: none; } 
-    .section-title { font-size: 2rem; }
-}
-
-.v-line { 
-    width: 1px; 
-    height: 90px; 
-    background: #d4af37; 
+.v-line {
+    width: 1px;
+    height: 62px;
+    background: #d4af37;
     opacity: 0.7;
-}  
-
-.star { 
-    color: #d4af37; 
-    font-size: 18px; 
-    margin: 12px 0;
 }
 
-.main-pricing-title {
-    text-align: center; /* Căn giữa */
-    font-family: 'Arial', sans-serif; /* Kiểu chữ giống các bảng giá */
-    font-size: 28px;
-    
-    text-transform: uppercase; /* Viết hoa toàn bộ */
-    margin: 0px 0; /* Khoảng cách trên dưới */
-    letter-spacing: 1px; /* Khoảng cách các chữ cho thoáng */
-    padding: 10px 0; 
-    background: #fff; 
-    color: #ee0000; 
-    font-family: 'Atteron';
+.star {
+    color: #d4af37;
+    font-size: 12px;
+    margin: 8px 0;
+    line-height: 1;
 }
 
-
-
-
-
-/* css ảnh 
-
-/* Container chứa các ảnh */
-.footer-images-container, 
-.footer-gallery, 
-.final-images-container {
-    display: block !important; /* Hủy bỏ hàng ngang, ép xuống hàng dọc */
-    width: 100%;
-    max-width: 800px; /* Giới hạn độ rộng để ảnh không bị quá to trên máy tính */
-    margin: 40px auto; /* Căn giữa toàn bộ vùng chứa ảnh */
-    padding: 0 15px;
-}
-
-/* Các khung bao quanh ảnh hoặc chính thẻ img */
-.image-card, 
-.image-wrapper, 
-.gallery-item,
-.gallery-block {
-    width: 100% !important;
-    margin-bottom: 50px; /* Khoảng cách giữa các ảnh khi xếp chồng */
-    display: block !important;
-}
-
-/* Quan trọng: Giữ tỷ lệ ảnh để không mất góc */
-.footer-images-container img,
-.footer-gallery img,
-.final-images-container img {
-    width: 100% !important;
-    height: auto !important; /* Giữ nguyên tỷ lệ gốc, không bị méo hay mất chi tiết */
+/* =========================================
+   6. FOOTER IMAGES
+========================================= */
+.footer-gallery {
     display: block;
-    border-radius: 8px; /* Bo góc nhẹ */
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* Đổ bóng cho đẹp */
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 0 15px 20px;
 }
 
-/* Responsive cho điện thoại */
+.gallery-item {
+    width: 100%;
+    margin-bottom: 28px;
+    display: block;
+}
+
+.footer-gallery img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================================
+   7. TABLET
+========================================= */
+@media screen and (max-width: 1024px) {
+    .main-wrapper {
+        max-width: 880px;
+    }
+
+    .pricing-row {
+        gap: 20px;
+    }
+
+    .country-title {
+        font-size: 1.08rem;
+        letter-spacing: 4px;
+    }
+
+    .table-pair {
+        gap: 10px;
+    }
+
+    .data-table {
+        width: 144px;
+        font-size: 8px;
+    }
+
+    .data-table thead th {
+        font-size: 7px;
+    }
+
+    .divider {
+        padding-top: 68px;
+        margin: 0 10px;
+    }
+
+    .v-line {
+        height: 54px;
+    }
+}
+
+/* =========================================
+   8. MOBILE - PIXEL GẦN ẢNH 2
+========================================= */
 @media screen and (max-width: 768px) {
-    .footer-images-container, 
-    .footer-gallery, 
-    .final-images-container {
-        padding: 0 10px;
-        margin-top: 20px;
+    .content-shell,
+    .main-wrapper,
+    .footer-gallery {
+        max-width: 392px;
+    }
+
+    .contact-section {
+        padding: 24px 0 12px;
+    }
+
+    .section-title {
+        font-size: 1.08rem;
+        font-weight: 400;
+        margin-bottom: 15px;
+        letter-spacing: 1px;
+    }
+
+    .contact-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 11px 18px;
+        padding: 0 20px;
+    }
+
+    .contact-item {
+        padding: 0;
+    }
+
+    .contact-item p {
+        font-size: 0.49rem;
+        margin-bottom: 2px;
+        line-height: 1.22;
+    }
+
+    .centered {
+        margin-top: 0;
+    }
+
+    .quote {
+        font-size: 1.24rem;
+        height: 9px;
+        margin-bottom: 2px;
+    }
+
+    .staff-name {
+        margin-top: 2px;
+    }
+
+    .decoration-red-bar {
+        height: 18px;
+        margin: 12px 0 18px;
+    }
+
+    .main-wrapper {
+        padding: 0 18px 10px;
+    }
+
+    .main-pricing-title {
+        font-size: 0.69rem;
+        line-height: 1.16;
+        margin: 0 0 13px;
+        padding: 0;
+        letter-spacing: 0.25px;
+    }
+
+    .pricing-scale {
+        width: 100%;
+        overflow: visible;
+    }
+
+    .pricing-row {
+        width: 100%;
+        gap: 8px;
+        margin-bottom: 16px;
+        justify-content: center;
+    }
+
+    .country-block {
+        width: calc(50% - 4px);
+        min-width: 0;
+    }
+
+    .country-title {
+        font-size: 0.6rem;
+        letter-spacing: 2px;
+        margin-bottom: 5px;
+        font-weight: 400;
+    }
+
+    .table-pair {
+        gap: 4px;
+        width: 100%;
+    }
+
+    .data-table {
+        width: calc(50% - 2px);
+        font-size: 4.55px;
+    }
+
+    .data-table th,
+    .data-table td {
+        padding: 2px 1px;
+        line-height: 1.08;
+    }
+
+    .data-table thead th {
+        font-size: 4.15px;
+    }
+
+    .divider {
+        display: flex;
+        padding-top: 36px;
+        margin: 0 7px;
+        flex: 0 0 8px;
+    }
+
+    .v-line {
+        height: 27px;
+    }
+
+    .star {
+        font-size: 7px;
+        margin: 3px 0;
+    }
+
+    .footer-gallery {
+        padding: 0 14px 16px;
+        margin-top: 18px;
+    }
+
+    .gallery-item {
+        margin-bottom: 16px;
+    }
+}
+
+/* =========================================
+   9. VERY SMALL MOBILE
+========================================= */
+@media screen and (max-width: 390px) {
+    .content-shell,
+    .main-wrapper,
+    .footer-gallery {
+        max-width: 330px;
+    }
+
+    .contact-grid {
+        padding: 0 18px;
+    }
+
+    .contact-item p {
+        font-size: 0.45rem;
+    }
+
+    .main-wrapper {
+        padding: 0 16px 10px;
+    }
+
+    .main-pricing-title {
+        font-size: 0.64rem;
+    }
+
+    .pricing-row {
+        gap: 6px;
+        margin-bottom: 14px;
+    }
+
+    .country-block {
+        width: calc(50% - 3px);
+    }
+
+    .country-title {
+        font-size: 0.54rem;
+        letter-spacing: 1px;
+    }
+
+    .table-pair {
+        gap: 3px;
+    }
+
+    .data-table {
+        font-size: 4px;
+    }
+
+    .data-table th,
+    .data-table td {
+        padding: 2px 1px;
+    }
+
+    .data-table thead th {
+        font-size: 3.8px;
+    }
+
+    .divider {
+        flex: 0 0 6px;
+        margin: 0 5px;
+        padding-top: 33px;
+    }
+
+    .v-line {
+        height: 23px;
+    }
+
+    .star {
+        font-size: 6px;
     }
 }
