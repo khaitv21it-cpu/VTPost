@@ -7,12 +7,16 @@
     box-sizing: border-box;
 }
 
+html,
+body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
     color: #333;
     background-color: #fff;
-    width: 100%;
-    overflow-x: hidden;
 }
 
 a {
@@ -55,7 +59,7 @@ a:hover {
    4. CONTACT SECTION
 ========================================= */
 .contact-section {
-    padding: 60px 0;
+    padding: 60px 18px;
     background: #fff;
     color: #ee0000;
 }
@@ -64,76 +68,111 @@ a:hover {
     text-align: center;
     font-size: 2.2rem;
     font-weight: 500;
-    margin-bottom: 40px;
+    margin-bottom: 36px;
     letter-spacing: 2px;
 }
 
-.contact-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.contact-item {
-    padding: 0 10px;
-}
-
-.contact-item p {
-    font-size: 1.15rem;
-    margin-bottom: 5px;
-    user-select: all;
-    -webkit-user-select: all;
-}
-
-.centered {
-    grid-column: 1 / -1;
-    margin-top: 20px;
+.single-contact-card {
     width: 100%;
-    display: flex;
-    flex-direction: column;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 34px;
+    border-radius: 22px;
+    background:
+        linear-gradient(135deg, rgba(238, 0, 0, 0.98), rgba(255, 77, 77, 0.92)),
+        #ee0000;
+    color: #fff;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 28px;
     align-items: center;
+    box-shadow: 0 18px 42px rgba(238, 0, 0, 0.18);
+    overflow: hidden;
 }
 
-.staff-box-inner {
+.contact-pill {
+    display: inline-flex;
+    width: fit-content;
+    border-radius: 999px;
+    padding: 8px 14px;
+    margin-bottom: 18px;
+    background: rgba(255, 255, 255, 0.18);
+    color: #fff;
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.single-contact-card h3 {
+    font-size: 1.55rem;
+    margin-bottom: 12px;
+    color: #fff;
+}
+
+.single-contact-card p {
+    font-size: 1.02rem;
+    line-height: 1.55;
+    margin-bottom: 6px;
+    color: #fff;
+}
+
+.contact-link {
+    font-weight: 700;
+}
+
+.phone-link strong {
+    font-size: 1.28rem;
+    letter-spacing: 0.4px;
+    font-weight: 800;
+}
+
+.copy-only {
+    user-select: text;
+    -webkit-user-select: text;
+    cursor: text;
+}
+
+.contact-actions {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    width: fit-content;
+    gap: 12px;
+    min-width: 170px;
 }
 
-.quote { 
-    font-size: 4rem; 
+.contact-btn {
     display: block;
-    height: 45px;
-
-    font-family: serif; 
-    font-weight: bold; 
-    color: #ee0000;
-
-    line-height: 1;        /* 🔥 reset baseline */
-    position: relative;
-    top: 1px;             /* 🔥 nhích lên */
+    text-align: center;
+    border-radius: 999px;
+    padding: 13px 18px;
+    font-size: 0.86rem;
+    font-weight: 800;
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.10);
 }
 
-
-.details-centered {
-    text-align: left;
+.contact-btn.primary {
+    background: #fff;
+    color: #ee0000;
 }
 
-.staff-name {
-    font-weight: bold;
-    margin-top: 5px;
-    color: #ee0000;
+.contact-btn.secondary {
+    background: rgba(255, 255, 255, 0.16);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.34);
 }
 
 .decoration-red-bar {
-    width: 100%;
+    width: 100vw;
     height: 36px;
     background: #ff4d4d;
-    margin: 28px 0 36px;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    margin-top: 28px;
+    margin-bottom: 36px;
+    border-radius: 0;
 }
 
 /* =========================================
@@ -324,6 +363,11 @@ a:hover {
    8. MOBILE - PIXEL GẦN ẢNH 2
 ========================================= */
 @media screen and (max-width: 768px) {
+    html,
+    body {
+        overflow-x: hidden;
+    }
+
     .content-shell,
     .main-wrapper,
     .footer-gallery {
@@ -331,49 +375,62 @@ a:hover {
     }
 
     .contact-section {
-        padding: 24px 0 12px;
+        padding: 16px 14px 0;
     }
 
     .section-title {
-        font-size: 1.08rem;
+        font-size: 0.82rem;
         font-weight: 400;
-        margin-bottom: 15px;
-        letter-spacing: 1px;
+        margin-bottom: 10px;
+        letter-spacing: 0.8px;
     }
 
-    .contact-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 11px 18px;
-        padding: 0 20px;
+    .single-contact-card {
+        max-width: 270px;
+        padding: 12px 12px;
+        border-radius: 12px;
+        grid-template-columns: 1fr;
+        gap: 8px;
     }
 
-    .contact-item {
-        padding: 0;
+    .contact-pill {
+        font-size: 0.34rem;
+        padding: 3px 6px;
+        margin-bottom: 6px;
+        letter-spacing: 0.35px;
     }
 
-    .contact-item p {
-        font-size: 0.49rem;
+    .single-contact-card h3 {
+        font-size: 0.72rem;
+        margin-bottom: 4px;
+    }
+
+    .single-contact-card p {
+        font-size: 0.47rem;
+        line-height: 1.25;
         margin-bottom: 2px;
-        line-height: 1.22;
     }
 
-    .centered {
-        margin-top: 0;
+    .phone-link strong {
+        font-size: 0.58rem;
     }
 
-    .quote {
-        font-size: 1.24rem;
-        height: 9px;
-        margin-bottom: 2px;
+    .contact-actions {
+        min-width: 0;
+        flex-direction: row;
+        gap: 6px;
     }
 
-    .staff-name {
-        margin-top: 2px;
+    .contact-btn {
+        flex: 1;
+        font-size: 0.4rem;
+        padding: 6px 4px;
     }
 
     .decoration-red-bar {
         height: 18px;
-        margin: 12px 0 18px;
+        margin-top: 16px;
+        margin-bottom: 16px;
     }
 
     .main-wrapper {
@@ -468,12 +525,26 @@ a:hover {
         max-width: 330px;
     }
 
-    .contact-grid {
-        padding: 0 18px;
+    .single-contact-card {
+        max-width: 255px;
+        padding: 11px 10px;
     }
 
-    .contact-item p {
-        font-size: 0.45rem;
+    .single-contact-card h3 {
+        font-size: 0.68rem;
+    }
+
+    .single-contact-card p {
+        font-size: 0.44rem;
+    }
+
+    .phone-link strong {
+        font-size: 0.54rem;
+    }
+
+    .contact-btn {
+        font-size: 0.38rem;
+        padding: 6px 3px;
     }
 
     .main-wrapper {
